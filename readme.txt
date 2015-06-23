@@ -1,4 +1,4 @@
-=== woocommerce New Orders Dashboard Widget===
+=== Woocommerce New Orders Dashboard Widget===
 Contributors: swadeshswain
 Tags: woocommerce, New Orders, Dashboard Widget,Order,status .
 Requires at least: 3.0
