@@ -18,7 +18,7 @@ global $wpdb;
 global $woocommerce ;
 
 $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
-	'numberposts' => $order_count,
+	'numberposts' => '10',
 	'meta_key'    => '_customer_user',
 	'meta_value'  => get_current_user_id(),
 	'post_type'   => 'shop_order',
