@@ -16,16 +16,29 @@ wp_add_dashboard_widget('od_woo_widget', 'WooCommerce Recent Orders', 'od_dashbo
 function od_dashboard_woo() {
 global $wpdb;
 global $woocommerce ;
-
+ $od_woo_odr_no = get_option( 'od_woo_odr_no' );
 $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
-	'numberposts' => '10',
+	'numberposts' => $od_woo_odr_no,
 	'meta_key'    => '_customer_user',
 	'meta_value'  => get_current_user_id(),
 	'post_type'   => 'shop_order',
 	'post_status' => 'publish'
 	
 ) ) );
+?>   
+<?php
 
+    if ( isset($_POST['submit']) ) { 
+        $nonce = $_REQUEST['_wpnonce'];
+        if (! wp_verify_nonce($nonce, 'php-woo-odr-updatesettings' ) ) {
+            die('security error');
+        }
+        $woo_odr_no = $_POST['woo_odr_no'];
+        update_option( 'od_woo_odr_no', $woo_odr_no );
+    } 
+    $od_woo_odr_no = get_option( 'od_woo_odr_no' );
+	?>
+<?php
 if ( $customer_orders ) : ?>
 	<table class="shop_table my_account_orders" width="100%">
 
@@ -117,6 +130,23 @@ if ( $customer_orders ) : ?>
 		?></tbody>
 
 	</table>
+    <div style="border-top: 1px solid #000;">
+
+			<form method="post" action="" id="php_odr_config_page">
+				<?php wp_nonce_field('php-woo-odr-updatesettings'); ?>                          
+				<table class="form-table">
+					<tbody>
+                    <tr>
+						<th><label>No Of Orders to Display : </label></th>
+						<td>
+                                         <Input type = 'text' Name ='woo_odr_no' <?php if($od_woo_odr_no!=""){?>value= '<?php echo $od_woo_odr_no ; ?>' <?php } else { ?> value = '5' <?php } ?> />
+                        </td>
+                    </tr>
+					</tbody>
+				</table>
+				<p class="submit"><input type="submit" value="Save Changes" class="button-primary" id="submit" name="submit" /></p>  
+			</form>
+</div>
 <?php endif; ?>
 
 <?php 

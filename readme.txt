@@ -3,15 +3,20 @@ Contributors: swadeshswain
 Tags: woocommerce, New Orders, Dashboard Widget,Order,status .
 Requires at least: 3.0
 Tested up to: 4.2
-Stable tag: 1.0
+Stable tag: 2.0
 License: GPLv2 or later
 
 woocommerce New Order's Dashboard Widget Shows the recent new orders from the user On the Dashboard .
 
 == Description ==
+1 . This plugin is a woocommerce addon.
 
-woocommerce New Order's Dashboard Widget Shows the recent new orders from the user On the Dashboard  panel,
+2 . If woocommerce plugin installed in your site ,then this plugin works.
+
+3 . woocommerce New Order's Dashboard Widget Shows the recent new orders from the user On the Dashboard  panel,
 also it shows the Order's status.
+
+4 . You can customize No of Product to dispaly on Dashboard.
 
 
 == Installation ==
@@ -34,4 +39,5 @@ also it shows the Order's status.
 = 1.0 =
 * woocommerce New Order's Dashboard Widget Shows the recent new orders from the user On the Dashboard .
 
-
+= 2.0 =
+* You can customize No of Product to dispaly on Dashboard.
