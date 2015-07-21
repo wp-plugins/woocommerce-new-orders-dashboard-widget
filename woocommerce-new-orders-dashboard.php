@@ -3,7 +3,7 @@
 Plugin Name: Woocommerce New Orders Dashboard Widget
 Plugin URI: http://odrasoft.com/
 Description: woocommerce New Orders Dashboard Widget Shows the recent new orders from the user On the Dashboard .
-Version: 0.1
+Version: 2.0
 Author: swadeshswain
 Author URI: http://odrasoft.com/
 License: GPLv2 or later

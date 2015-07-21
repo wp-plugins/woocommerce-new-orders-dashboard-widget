@@ -3,7 +3,7 @@ Contributors: swadeshswain
 Tags: woocommerce, New Orders, Dashboard Widget,Order,status .
 Requires at least: 3.0
 Tested up to: 4.2
-Stable tag:  2.0
+Stable tag: 2.0
 License: GPLv2 or later
 
 woocommerce New Order's Dashboard Widget Shows the recent new orders from the user On the Dashboard .
