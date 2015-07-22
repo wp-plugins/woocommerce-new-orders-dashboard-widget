@@ -3,7 +3,7 @@
 Plugin Name: Woocommerce New Orders Dashboard Widget
 Plugin URI: http://odrasoft.com/
 Description: woocommerce New Orders Dashboard Widget Shows the recent new orders from the user On the Dashboard .
-Version: 2.1
+Version: 2.2
 Author: swadeshswain
 Author URI: http://odrasoft.com/
 License: GPLv2 or later
@@ -64,7 +64,7 @@ if ( $customer_orders ) : ?>
 
 				?><tr class="order">
 					<td class="order-number">
-						<a href="<?php echo $order->get_view_order_url(); ?>">
+						<a href="<?php echo get_home_url(); ?>/wp-admin/post.php?post=<?php echo $order->get_order_number() ;?>&action=edit">
 							<?php echo $order->get_order_number(); ?>
 						</a>
 					</td>
@@ -120,7 +120,7 @@ if ( $customer_orders ) : ?>
 
 							if ($actions) {
 								foreach ( $actions as $key => $action ) {
-									echo '<a href="' . esc_url( $action['url'] ) . '" class="button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
+									echo '<a href="' .get_home_url() . '/wp-admin/post.php?post= '. $order->get_order_number().'&action=edit" class="button ' . sanitize_html_class( $key ) . '">' . esc_html( $action['name'] ) . '</a>';
 								}
 							}
 						?>
