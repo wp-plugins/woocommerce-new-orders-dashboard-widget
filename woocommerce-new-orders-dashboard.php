@@ -20,7 +20,7 @@ global $woocommerce ;
 $customer_orders = get_posts( apply_filters( 'woocommerce_my_account_my_orders_query', array(
 	'numberposts' => $od_woo_odr_no,
 	'meta_key'    => '_customer_user',
-	'meta_value'  => get_current_user_id(),
+	//'meta_value'  => get_current_user_id(),
 	'post_type'   => 'shop_order',
 	'post_status' => 'publish'
 	
